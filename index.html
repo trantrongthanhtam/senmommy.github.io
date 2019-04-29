@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Lora|Open+Sans|Quicksand|Source+Sans+Pro" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <style>
+        body {
+            display: flex;
+            font-family: 'Quicksand', sans-serif;
+            flex-direction: column;
+            justify-content: center;
+        }
+       .mywrapper {
+            display: flex;
+            font-family: 'Quicksand', sans-serif;
+            flex-direction: column;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        .nav_box {
+            display: block;
+            list-style-type: none;
+            background-color: transparent;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .nav {
+            display: inline-block;
+            font-size: 17;
+            padding-right: 5px;
+            text-decoration: none;
+            background-color: transparent;
+            color: black;
+            font-weight: normal;
+        }
+
+        .nav:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .header2,
+        .shipping {
+            display: none;
+        }
+
+        .header {
+            display: flex;
+            margin: 0 0 0 0;
+            background-color: white;
+            max-height: 100px;
+            height: 20vw;
+        }
+
+        .right_nav1 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 17px;
+            width: 40%;
+        }
+
+        .right_nav2 {
+            display: inline-block;
+            text-align: center;
+            margin: auto;
+            width: 20%;
+        }
+
+        .right_nav3 {
+            display: flex;
+            width: 40%;
+            text-align: center;
+            align-items: flex-end;
+        }
+
+        .danhmuc_box {
+            display: none;
+            position: absolute;
+            margin-left: -50px;
+            background-color: white;
+            width: 80vw;
+            z-index: 2;
+            max-width: 600px;
+            border: solid black;
+            border-width: 1px;
+        }
+
+        .danhmuc:hover .danhmuc_box {
+            display: flex;
+        }
+
+        .danhmuc_box:hover {
+            display: flex;
+        }
+
+        .danhmuc_content {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 33.3333%;
+        }
+
+        .subdanhmuc1:hover {
+            background-color: lightgray;
+            width: 100%;
+            margin: auto;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .subdanhmuc1 {
+            display: block;
+            width: 100%;
+            margin: auto;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: 400;
+            color: black;
+        }
+
+        h4 {
+            color: #ba2568;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .divider {
+            height: 1px;
+            background: #ba2568;
+            margin: 0 0 0 0;
+            width: 100%;
+            border-bottom: 1px solid #ba2568;
+
+        }
+        .homecontent2 {
+            display: flex;
+            position: relative;
+            width: 170vw;
+            height: auto;
+            margin-left:0;
+            overflow:hidden;
+            -webkit-animation: cycle 45s ease infinite;
+            -moz-animation: cycle 45s ease infinite;
+            -o-animation: cycle 45s ease infinite;
+            animation: cycle 45s ease infinite;
+        }
+        
+        .homecontent2 a {
+           width:auto;
+        }
+        
+        .homecontent2 a img{
+            width:auto;
+            height: 50vw;
+        }
+
+        .homecontent2:hover {
+            -webkit-animation-play-state:  paused;
+            -moz-animation-play-state:  paused;
+            -o-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+        
+        @keyframes cycle{
+            from {transform: translateX(0px);}
+            50% {transform: translateX(-70vw);}
+            to {transform: translateX(0px);}
+            
+        }
+        .homecontent3 {
+            display: flex;
+            margin: auto;
+        }
+
+        .homecontent3_1 {
+            display: block;
+            width: 30%;
+        }
+
+        .homecontent3_2 {
+            display: block;
+            width: 70%;
+            background-color: white;
+            color: black;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .homecontent4 {
+            display: block;
+            margin-top: 20px;;
+            text-align: center;
+        }
+
+        .homecontent4_2 {
+            display: flex;
+            flex-flow: wrap;
+            width: 90%;
+            margin: auto;
+            list-style: none;
+            
+        }
+
+        .homecontent4_product {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 24%;
+            text-decoration: none;
+        }
+        .homecontent4_product p{
+            margin: 10px 0 5px 0;
+        }
+
+        .homecontent5 {
+            display: flex;
+            width: 100%;
+            margin: auto;
+            align-items: center;
+            max-width: 1000px;
+        }
+
+        .homecontent5_1 {
+            display: inline-block;
+            vertical-align: middle;
+            width: 70%;
+        }
+
+        .homecontent5_2 {
+            width: 30%;
+            text-align: left;
+            line-height: 50px;
+        }
+
+        .homecontent7 {
+            display: flex;
+            margin: 0 0 0 0;
+        }
+
+        .homecontent6 {
+            display: flex;
+            max-width: 1300px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .homecontent6_1 {
+            display: block;
+            width: 30%;
+            padding: 10px;
+        }
+
+        .homecontent6_2 {
+            display: block;
+            width: 30%;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .homecontent6_3 {
+            display: block;
+            text-align: left;
+            width: 40%;
+            padding: 10px;
+        }
+
+        .fa {
+            font-size: 20px;
+            width: 20px;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            border-radius: 100%;
+        }
+
+        .fa:hover {
+            opacity: 0.5;
+        }
+
+        .fa-facebook {
+            padding: 17px;
+            margin-right: 5px;
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-youtube {
+            padding: 17px;
+            margin-right: 5px;
+            background: #bb0000;
+            color: white;
+        }
+
+        .fa-zalo {
+            width:55px; height:55px; 
+            vertical-align: middle;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+        }
+        .fa-zalo:hover {
+            opacity: 0.5;
+        }
+        
+        .fa-google {
+            padding: 17px;
+            margin-right: 5px;
+            background: #dd4b39;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);
+            /* Black see-through */
+            color: #f1f1f1;
+            width: 100%;
+            transition: .5s ease;
+            opacity: 0;
+            overflow: hidden;
+            margin-bottom: 5px;
+            color: white;
+            font-size: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+        @media (max-width:399px){
+            .homecontent6 {
+                display: flex;
+                flex-flow: wrap;
+                width: 100%;
+                margin: auto;
+            }
+
+            .homecontent6_1 {
+                width: 100%;
+                text-align: left;
+                padding-left: 3vw;
+            }
+
+            .homecontent6_2 {
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding-left: 3vw;
+                margin-top: -20px;
+            }
+
+            .homecontent6_3 {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: inherit;
+            }
+        }
+        @media (max-width:650px) and (min-width:399px) {
+            .homecontent6 {
+                display: flex;
+                flex-flow: wrap;
+                width: 100%;
+                margin: auto;
+            }
+
+            .homecontent6_1 {
+                width: 45%;
+                text-align: left;
+                padding-left: 3vw;
+            }
+
+            .homecontent6_2 {
+                display: block;
+                width: 44%;
+                text-align: left;
+                padding-left: 0vw;
+            }
+
+            .homecontent6_3 {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: inherit;
+            }
+        }
+        /*------------------------ device < 650px width screen-------------------------------------------------*/
+        @media (max-width:650px) {
+
+            .homecontent4 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .homecontent4_2 {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .homecontent4_product {
+                display: flex;
+                width: 70%;
+                text-decoration: none;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 50px;
+            }
+
+            .homecontent5 {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin: auto;
+            }
+
+            .homecontent5_1 {
+                display: flex;
+                vertical-align: middle;
+                width: 100%;
+                margin-left: 0;
+                padding-top: 13px;
+                height: 100%;
+                justify-content: center;
+            }
+
+            .homecontent5_2 {
+                width: 100%;
+                line-height: 30px;
+                text-align: center;
+            }
+
+            .fa {
+                padding: 12px;
+                font-size: 20px;
+                width: 20px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 100%;
+            }
+            
+            .fa-zalo {
+                width:45px; height:45px; 
+                vertical-align: middle;
+                color: white;
+                font-family: 'Quicksand', sans-serif;
+                font-weight: bold;
+            }
+            
+            .fa-zalo:hover {
+                opacity: 0.5;
+            }
+        }
+        @media screen and (max-width:1151px) and (min-width:650px){
+        .homecontent4_2 {
+                display: flex;
+                flex-flow: wrap;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .homecontent4_product {
+                display: flex;
+                width: 47%;
+                text-decoration: none;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 80px;
+            }
+        }
+        /*--------------------------------device < 818px width screen----------------------------------------*/
+        @media screen and (max-width:818px) {
+            
+            .homecontent7,{
+                display: flex;
+            }
+
+            .homecontent3 {
+                display: flex;
+                flex-direction: column;
+            }
+            .homecontent3_1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .homecontent3_2 {
+                display: block;
+                width: 100%;
+                background-color: white;
+                color: black;
+                padding-left: 0px;
+                padding-right:0px;
+            }
+            
+            
+            .header {
+                display: none;
+            }
+
+            
+            .header2 {
+                display: flex;
+                flex-flow: wrap;
+                position: fixed;
+                top:0;
+                left:0;
+                right:0;
+                z-index: 20;
+                margin: 0 0 0 0;
+                background-color: white;
+                max-height: 80px;
+                height: 20vw;
+            }
+            
+            .header_decoy{
+                max-height: 110px;
+                height: 20vw;
+            }
+
+            .right_nav1 {
+                display: flex;
+                width: 10%;
+                margin-left: 5px;
+                transition: .9s ease;
+                padding: 0;
+            }
+
+            .right_nav2 {
+                display: flex;
+                width: 70%;
+                margin-bottom: -10px;
+                 transition: .9s ease;
+            }
+
+            .right_nav3 {
+                display: flex;
+                width: 10%;
+                margin-right: 5px;
+                transition: .9s ease;
+                padding:0;
+            }
+
+            .side_nav_box {
+                display: block;
+                list-style-type: none;
+                background-color: transparent;
+                overflow: hidden;
+                margin-top: 0;
+            }
+
+            #Mymenu {
+                display: flex;
+                flex-direction: column;
+                width: 0px;
+                position: fixed;
+                z-index: 100;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                overflow-y: auto;
+                background-color: #29373f;
+                overflow-x: hidden;
+                transition: 0.2s;
+                padding-top: 20px;
+                color: white;
+            }
+            
+            .shipping {
+                display: inline-block;
+                width: 100%;
+                font-size: 12px;
+                background-color: white;
+            }
+
+            .side_nav {
+                display: inline;
+                font-size: 17;
+                padding: 10px 0 10px 10px;
+                text-decoration: none;
+                background-color: transparent;
+                color: white;
+                font-weight: normal;
+            }
+
+            .side_nav:hover {
+                font-weight: bold;
+                text-decoration: none;
+                background-color: lightgray;
+                color: black;
+            }
+            
+            .side_active {
+                font-weight: bold;
+                text-decoration: none;
+                background-color: lightgray;
+                color: black;
+                transition: .5s ease;
+            }
+            .side_danhmuc_box {
+                display: flex;
+                flex-direction: column;
+                background-color: #f4f4f4;
+                width: 100%;
+                height: 100%;
+                margin-bottom: 0px;
+                text-decoration: none;
+                -webkit-transition: all 0.5s ease-in-out;
+                -moz-transition: all 0.5s ease-in-out;
+                -o-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+            }
+            
+
+            .side_danhmuc {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                text-decoration: none;
+                height:0;
+                overflow-y: hidden;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+            
+            .side_danhmuc_active{
+                
+            }
+            
+            .side_danhmuc_content {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .side_danhmuc_content2:hover {
+                color: black;
+                background-color: lightgray;
+            }
+            .side_danhmuc_content a:hover {
+                color: black;
+                font-weight: bold;
+                background-color: lightgray;
+            }
+            .side_danhmuc_content .side_subdanhmuc {
+                color:black;
+                text-decoration: none;
+                padding: 10px 0 10px 10px;
+            }
+            .side_danhmuc_content .side_subheader{
+                text-decoration: none;
+                color: #ba2568;
+                font-weight: bold;
+                padding: 10px 0 10px 10px;
+            }
+            
+            .rotated{
+                -webkit-transform : rotate(180deg); 
+                -moz-transform    : rotate(180deg);  
+                -o-transform      : rotate(180deg); 
+                transform       : rotate(180deg); 
+                -webkit-transition: all 0.5s ease-in-out;
+                -moz-transition: all 0.5s ease-in-out;
+                -o-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+            }
+
+        }
+
+        /*----------------------------------Menu resize at 1018px width--------------------------*/
+        @media screen and (max-width:1020px) and (min-width:818px) {
+            .header {
+                display: flex;
+                margin: 0 0 0 0;
+                background-color: white;
+                max-height: 120px;
+                height: 20vw;
+            }
+
+            .right_nav1 {
+                display: flex;
+                align-self: flex-end;
+                justify-content: center;
+                align-items: flex-end;
+                padding-bottom: 17px;
+                width: 50%;
+                height: 30%;
+                transition: .9s ease;
+            }
+
+            .right_nav2 {
+                display: flex;
+                align-self: flex-start;
+                justify-content: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 20%;
+                transition: .9s ease;
+            }
+
+            .right_nav3 {
+                display: flex;
+                width: 50%;
+                text-align: right;
+                align-items: flex-end;
+                transition: .9s ease-out;
+            }
+
+            .header2,
+            .shipping {
+                display: none;
+            }
+        }
+
+        /*-----------------------------------the end of style--------------------------------------------*/
+    </style>
+</head>
+
+<body>
+    
+    <script>
+        $(document).ready(function(){
+            var docclick = null;
+            var sideclick = false;
+            
+            $("#menuicon").click(function() {
+                $("#Mymenu").css("width","250px");
+            });
+            
+            $("#side_close").click(function() {
+                $("#Mymenu").css("width","0");
+            });
+            
+            $("#dropmenu").click(function(){
+                $("#dropmenu").toggleClass("side_active");
+                if ($("#dropmenuContent").css("height") !== "0px"){
+                    $("#dropmenuContent").css("height","0px");
+                } else {$("#dropmenuContent").css("height","284px");}
+                
+            })
+
+            $(document).click(function(evt){ 
+                $("#Mymenu").click(function(sideevt){
+                    sideclick = sideevt.type;
+                });
+                var opened = $("#Mymenu").css('width');
+                if (sideclick === false && opened !== "0px"){
+                    $("#Mymenu").css("width","0");
+                }
+                sideclick = false;
+            });
+            
+            AOS.init();
+        });
+        
+
+        /*function closemenu() {
+            document.getElementById("Mymenu").style.width = "0px";
+            document.getElementById("dropmenuContent").style.height = "0";
+        }
+
+        function dachon() {
+            document.getElementById("dropmenu").classList.toggle("side_active");
+            if (document.getElementById("dropmenuContent").style.height === "284px") {
+                document.getElementById("dropmenuContent").style.height = "0";
+            }  else {  
+                document.getElementById("dropmenuContent").style.height = "284px";
+                    }
+        }        
+         });*/
+    </script>
+    <div class="mywrapper">
+    <div class="header">
+        <div class="right_nav1">
+            <a href="About.html" class="nav">Giới thiệu</a><a>|&nbsp;</a>
+            <div class="nav danhmuc"> Sản phẩm
+                <div class="danhmuc_box">
+                    <div class="danhmuc_content">
+                        <a href=# style="text-decoration: none;">
+                            <h4>PHONG CÁCH CỦA MẸ</h4>
+                        </a>
+                        <a class="subdanhmuc1" href=#>Đầm cho mẹ</a>
+                        <a class="subdanhmuc1" href=#>Quần áo bầu</a>
+                        <a class="subdanhmuc1" href=#>Đồ mẹ mặc nhà</a>
+                        <a class="subdanhmuc1" href=#>Đổ lót cho mẹ</a>
+                    </div>
+                    <div class="danhmuc_content">
+                        <a href=#>
+                            <h4>MẸ DƯỠNG DA</h4>
+                        </a>
+                    </div>
+                    <div class="danhmuc_content">
+                        <a href=#>
+                            <h4>DÀNH CHO BÉ YÊU</h4>
+                        </a>
+                    </div>
+                </div>
+            </div><a>|&nbsp;</a>
+            <a href="Homepage.html" class="nav"> Khuyến mãi</a><a>|&nbsp;</a>
+            <a href="Homepage.html" class="nav"> Tâm sự</a><a>|&nbsp;</a>
+            <a href="Homepage.html" class="nav"> Liên hệ</a>
+        </div>
+        <div class="right_nav2"><a href="Homepage.html"><img src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.15752-9/57540283_310483732956091_4205589434592133120_n.png?_nc_cat=102&_nc_oc=AQlIIdx_1BDN4nik1Ij426n83UsioNYTACM9rhwvS3b5catqlehzzZL-LfDaP2dJpnQ&_nc_ht=scontent.fsgn5-4.fna&oh=6fa738bcd6bc1d92f073dc97b3a2b221&oe=5D6D4627" width="85%" height="inherit" style="max-width: 170px; max-height: 100px" /></a></div>
+        <div class="right_nav3">
+            <p style="display: block;width: 60%;margin-right: 10px;"><a href="tel:0973244051" style="text-decoration: none; color: black;"><a class="material-icons" style="vertical-align: top;">phone</a><Strong> HOTLINE: 0973 244 051</Strong></a></p>
+            <p style="display: block;width: 40%;font-size: 12px;">Miễn phí đổi hàng <a class="fa fa-undo" style="vertical-align: middle;"></a><br> Ship COD toàn quốc <a class="material-icons" style="vertical-align: middle;">local_shipping</a></p>
+        </div>
+    </div>
+
+
+
+    <!-- for mobile and semi-mobile----------------------------------------------------------------------->
+    <div class="header2">
+        <div id="Mymenu" class="side_menu" >
+            <p style="display: flex;justify-content: space-between;width:100%;"><a><strong style="margin-left: 10px">MENU</strong></a>
+                <a id="side_close" class="material-icons" style="vertical-align: middle;margin-right: 10px;cursor: pointer;" >close</a>
+            </p>
+            <a href="About.html" class="side_nav">Giới thiệu</a>
+            <div href=# class="side_nav" id="dropmenu" style="text-decoration: none;cursor: pointer"> 
+                Sản phẩm <i id="dropicon" class="material-icons" style="vertical-align: middle; cursor: pointer;">keyboard_arrow_down</i>
+            </div>
+            <div class="side_danhmuc" id="dropmenuContent">    
+            <div class="side_danhmuc_box">
+                    <div class="side_danhmuc_content">
+                        <div class="divider"></div>
+                        <a href=# class="side_subheader">PHONG CÁCH CỦA MẸ</a>
+                        <a href=# class="side_subdanhmuc">Đầm cho mẹ</a>
+                        <a href=# class="side_subdanhmuc">Quần áo bầu</a>
+                        <a href=# class="side_subdanhmuc">Đồ mẹ mặc nhà</a>
+                        <a href=# class="side_subdanhmuc">Đổ lót cho mẹ</a>
+                    </div>
+                <div class="divider"></div>
+                    <div class="side_danhmuc_content">
+                        <a href=# class="side_subheader">MẸ DƯỠNG DA</a>
+                    </div>
+                <div class="divider"></div>
+                    <div class="side_danhmuc_content">
+                        <a href=# class="side_subheader">DÀNH CHO BÉ YÊU</a>
+                    </div>
+            </div>
+            </div>
+            <a href=# class="side_nav"> Khuyến mãi</a>
+            <a href="Homepage.html" class="side_nav"> Tâm sự</a>
+            <a href="Homepage.html" class="side_nav"> Liên hệ</a>
+        </div>
+        <div class="right_nav1" id="menuicon">
+            <a class="material-icons" style="cursor: pointer; font-size: 30px" >menu</a>
+        </div>
+        <div class="right_nav2"><a href="Homepage.html" style="width: 100%;"><img src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.15752-9/57540283_310483732956091_4205589434592133120_n.png?_nc_cat=102&_nc_oc=AQlIIdx_1BDN4nik1Ij426n83UsioNYTACM9rhwvS3b5catqlehzzZL-LfDaP2dJpnQ&_nc_ht=scontent.fsgn5-4.fna&oh=6fa738bcd6bc1d92f073dc97b3a2b221&oe=5D6D4627" width="30%" height="inherit" style="max-width: 140px" /></a>
+        </div>
+        <div class="right_nav3">
+            <a href="tel:0973244051" class="material-icons" style="text-decoration: none;color: black; font-size: 28px; cursor: pointer;">phone</a>
+        </div>
+        <div class="shipping" style="width: 100%; text-align: center;"><a class="material-icons" style="vertical-align: middle;">replay</a>Miễn phí đổi hàng |&nbsp;<a class="material-icons" style="vertical-align: middle;">local_shipping</a> Ship COD toàn quốc
+        </div>
+    </div>
+    
+    <div class="header_decoy"></div>
+    <!-- The end of header section for mobile and semi-mobile---------------------------------------------------->
+
+
+
+    <div class="homecontent2">
+        <a href=# class="slideshow1"><img src="https://product.hstatic.net/1000197303/product/pro_do_3_96ec238818914c9ca5c3c449c4987e6d_2048x2048.jpg" /></a>
+        <a href=# class="slideshow2"><img  src="https://product.hstatic.net/1000197303/product/pro_xanh_la_1_6ecfaf47810347bbb2d5dca5531a153b_2048x2048.jpg"  /></a>
+        <a href=# class="slideshow3"><img src="https://product.hstatic.net/1000197303/product/pro_trang_2_1766d41852e943319fb9f86ec44c9055_2048x2048.jpg" /></a>
+        <a href=# class="slideshow3"><img src="https://product.hstatic.net/1000197303/product/pro_do_2_35688f8b612042eca6d22ccb806e878c_2048x2048.jpg" /></a>
+        <a href=# class="slideshow3"><img src="https://product.hstatic.net/1000197303/product/pro_trang_1_e75a033cff5441e4b742c025636116a6_2048x2048.jpg" /></a>
+    </div>
+    
+    
+
+    <div class="homecontent3">
+        <div class="homecontent3_2" style="margin-top: 20px;">
+            <h3 style="text-align: center;">SEN CHIA SẺ VÀ MẸ TÂM SỰ</h3>
+            <p style="margin-left: 10px; text-align: justify;margin-right: 10px;">"At vero eos et accusamus et iusto odio dignissimos ducim recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequAt vero eos et accusamus et iusto odio dignissimos ducim recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut At vero eos et accusamus et iusto odio dignissimos ducim recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut atur aut perferendis doloribus asperiores repellat."</p>
+        </div>
+        <div class="homecontent3_1" style="margin-top: 20px;">
+            <h3 style="text-align: center;">SẢN PHẨM HOT</h3>
+            <a href=# style="width: 80%;" ><img src="https://product.hstatic.net/1000197303/product/pro_do_2_35688f8b612042eca6d22ccb806e878c_2048x2048.jpg" width ="100%" height="auto" data-aos="fade-left"/></a>
+        </div>
+    </div>
+    <div class="homecontent4">
+        <h3 class="homecontent4_1" style="margin-left: 10px; width: 100%;">SẢN PHẨM MỚI NHẤT</h3>
+         <div class="homecontent4_2" style="">
+            <a href=# class="homecontent4_product" data-aos="fade-up">
+                <img src="https://product.hstatic.net/1000197303/product/pro_den_1_2baa36cd51df4510be64a800c66a149a_2048x2048.jpg" width="100%" />
+                <p >Đầm bầu số 1</p>
+                <p >Giá: 50.000đ</p>
+                <p >Size: S, M, X, XL</p>
+                <div></div>
+            </a>
+            <a href=# class="homecontent4_product" data-aos="fade-up">
+                <img src="https://product.hstatic.net/1000197303/product/pro_do_3_96ec238818914c9ca5c3c449c4987e6d_2048x2048.jpg" width="100%" />
+                <p >Đầm bầu số 1</p>
+                <p >Giá: 50.000đ</p>
+                <p >Size: S, M, X, XL</p>
+                <div></div>
+            </a>
+            <a href=# class="homecontent4_product" data-aos="fade-up">
+                <img src="https://product.hstatic.net/1000197303/product/pro_xanh_duong_2_aa89285442d14d78afa1427d12aa4181_2048x2048.jpg" width="100%"/>
+                <p >Đầm bầu số 1</p>
+                <p >Giá: 50.000đ</p>
+                <p >Size: S, M, X, XL</p>
+                <div></div>
+            </a>
+            <a href=# class="homecontent4_product" data-aos="fade-up">
+                <img src="https://product.hstatic.net/1000197303/product/pro_vang_1_3ac7cd2d86c140dca709439ebda916bf_2048x2048.jpg" width="100%" />
+                <p >Đầm bầu số 1</p>
+                <p >Giá: 50.000đ</p>
+                <p >Size: S, M, X, XL</p>
+                <div></div>
+            </a>
+            <a href=# class="homecontent4_product" data-aos="fade-up">
+                <img src="https://product.hstatic.net/1000197303/product/pro_xanh_la_1_6ecfaf47810347bbb2d5dca5531a153b_2048x2048.jpg" width="100%"/>
+                <p >Đầm bầu số 1</p>
+                <p >Giá: 50.000đ</p>
+                <p >Size: S, M, X, XL</p>
+                <div></div>
+            </a>
+            <a href=# class="homecontent4_product" data-aos="fade-up">
+                <img src="https://product.hstatic.net/1000197303/product/pro_do_2_35688f8b612042eca6d22ccb806e878c_2048x2048.jpg" width="100%" />
+                <p >Đầm bầu số 1</p>
+                <p >Giá: 50.000đ</p>
+                <p >Size: S, M, X, XL</p>
+                <div></div>
+            </a>
+            <a href=# class="homecontent4_product" data-aos="fade-up">
+                <img src="https://product.hstatic.net/1000197303/product/pro_trang_1_e75a033cff5441e4b742c025636116a6_2048x2048.jpg" width="100%"/>
+                <p >Đầm bầu số 1</p>
+                <p >Giá: 50.000đ</p>
+                <p >Size: S, M, X, XL</p>
+                <div></div>
+            </a>
+            <a href=# class="homecontent4_product" data-aos="fade-up">
+                <img src="https://product.hstatic.net/1000197303/product/pro_trang_2_1766d41852e943319fb9f86ec44c9055_2048x2048.jpg" width="100%" />
+                <p >Đầm bầu số 1</p>
+                <p >Giá: 50.000đ</p>
+                <p >Size: S, M, X, XL</p>
+                <div></div>
+            </a>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="homecontent5">
+        <div class="homecontent5_1"><a style="margin:auto 5px auto 25px; "><strong>KẾT NỐI: </strong></a><a href="#" class="fa fa-facebook"></a><a href=#><img class="fa-zalo" src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.15752-9/58631083_1479527252185658_1590809870158790656_n.png?_nc_cat=102&_nc_oc=AQkWxC_IKJn-1jberr1zasiEtRdHb2XXq9sr8FBTuuRrCjcP5fem2lGXw_it4bFU1VQ&_nc_ht=scontent.fsgn5-4.fna&oh=776a38be55c5a33609343c8c4aa3bed8&oe=5D77FE95" style="margin-right: 5px;" /></a><a href="#" class="fa fa-youtube"></a><a href="#" class="fa fa-google"></a>
+        </div>
+        <p class="homecontent5_2"><a href="tel:0973244051" style="text-decoration: none;color: black;"><strong style="margin-top: auto;margin-bottom: auto;">HOTLINE: 0973 244 051</strong></a></p>
+    </div>
+    <div class="divider"></div>
+    <div class="homecontent6">
+        <div class="homecontent6_1">
+            <h3 style="margin: 10px 0 5px 0;">Hỗ trợ khách hàng:</h3>
+            <a style="display: block;">Hướng dẫn mua hàng</a>
+            <a style="display: block;">Hướng dẫn đổi hàng</a>
+            <a style="display: block;">Chính sách giao hàng</a>
+            <a style="display: block;">Hướng dẫn thanh toán</a>
+        </div>
+        <div class="homecontent6_2">
+            <h3 style="margin: 10px 0 5px 0;">Về chúng tôi:</h3>
+            <a style="display: block;">Liên hệ</a>
+            <a style="display: block;">Tin tức</a>
+            <a style="display: block;">Giới thiệu thương hiệu</a>
+            <a style="display: block;">Cảm nhận khách hàng</a>
+        </div>
+        <div class="homecontent6_3">
+            <h3 style="margin: 10px 0 0px 0;">Địa chỉ cửa hàng:</h3>
+            <a style="display: inline-block; margin-left: 10px;margin-right: 10px;"><i class="material-icons-outlined" style="display: inline-block;">place</i>30/44 Đỗ Nhuận, phường Sơn Kỳ, quận Tân Phú, TP.Hồ Chí Minh</a>
+        </div>
+    </div>
+    <div class="divider" style="margin-top:10px; background-color: black; border-bottom-color: black;"></div>
+    <div class="homecontent7" style="background-color: lightgray; margin: 0 0 0 0;display: flex;">
+        <p style="margin: auto; padding: 20px;font-size: 12px;">| Copyright &#169; 2019 SenMommy Inc. |</p>
+    </div>
+</div>
+</body>
+</html>
