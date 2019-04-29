@@ -164,7 +164,7 @@ body {
             flex-direction: row;
             align-self: center;
             width: 100%;
-            max-width: 1500px;
+            max-width: 1000px;
         }
         
         .product_img {
